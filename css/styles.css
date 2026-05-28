@@ -75,16 +75,16 @@ a {
 
 /* —— Header —— */
 .site-header {
+  --nav-height: 2.75rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem 0;
-  background: rgba(10, 10, 12, 0.85);
+  padding: 0.875rem 0;
+  background: rgba(10, 10, 12, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  transition: padding var(--transition);
 }
 
 .site-header .container {
@@ -92,43 +92,75 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  min-height: 3.5rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .logo-link img {
-  height: 40px;
+  height: 3.25rem;
   width: auto;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 0.5rem;
   list-style: none;
 }
 
-.nav a {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  transition: color var(--transition);
+.nav li {
+  display: flex;
+  align-items: center;
 }
 
-.nav a:hover {
+.nav a:not(.nav-cta) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-height);
+  padding: 0 1.125rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.nav a:not(.nav-cta):hover {
   color: var(--text);
+  background: var(--bg-elevated);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  justify-content: center;
+  height: var(--nav-height);
+  padding: 0 1.375rem;
   background: var(--accent);
   color: #fff !important;
+  font-size: 0.72rem;
   font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
   border-radius: var(--radius);
-  letter-spacing: 0.06em;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
 .nav-cta:hover {
@@ -138,11 +170,16 @@ a {
 
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--nav-height);
+  height: var(--nav-height);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   color: var(--text);
   cursor: pointer;
-  padding: 0.25rem;
+  flex-shrink: 0;
 }
 
 /* —— Hero —— */
@@ -497,13 +534,78 @@ a {
 
 /* —— Mobile —— */
 @media (max-width: 900px) {
+  .container {
+    width: min(100% - 1.5rem, var(--max-width));
+  }
+
+  /* Header: menú a la derecha */
+  .site-header {
+    padding: 0.75rem 0;
+  }
+
+  .site-header .container {
+    position: relative;
+    width: calc(100% - 1rem);
+    max-width: none;
+    margin-inline: auto;
+    gap: 0.5rem;
+  }
+
+  .logo-link {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo-link img {
+    height: 2.75rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .site-header nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .nav {
+    display: none;
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav li {
+    width: 100%;
+  }
+
+  .nav a:not(.nav-cta),
+  .nav-cta {
+    width: 100%;
+    height: var(--nav-height);
+  }
+
+  /* Contenido centrado y texto justificado */
   .hero-grid,
   .location-grid,
   .about-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .services-grid {
     grid-template-columns: 1fr;
   }
 
@@ -512,39 +614,92 @@ a {
   }
 
   .hero-visual img {
-    max-width: 280px;
+    max-width: min(100%, 320px);
     margin-inline: auto;
   }
 
-  .nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: var(--bg-deep);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 1.25rem 1.25rem;
-  }
-
-  .nav.is-open {
+  .hero-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .nav li {
-    padding: 0.65rem 0;
-    border-bottom: 1px solid var(--border);
+  .hero-badge {
+    padding-left: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
-  .nav li:last-child {
-    border-bottom: none;
-    padding-top: 1rem;
+  .hero-badge::before {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
   }
 
-  .menu-toggle {
-    display: block;
+  .hero-badge::after {
+    content: "";
+    width: 1.25rem;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    text-align: center;
+    max-width: 22ch;
+  }
+
+  .hero-lead {
+    max-width: 100%;
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .section-label,
+  .section-title {
+    text-align: center;
+  }
+
+  .section-intro {
+    max-width: 100%;
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+    margin-bottom: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+    width: 100%;
   }
 
   .about-inner {
@@ -553,15 +708,60 @@ a {
 
   .about-inner img {
     margin-inline: auto;
+    max-width: 240px;
+  }
+
+  .about-inner p {
+    max-width: 100%;
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  .location-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .location-block {
+    width: 100%;
+  }
+
+  .location-block p {
+    text-align: center;
+  }
+
+  .phone-list {
+    align-items: center;
+  }
+
+  .map-link {
+    margin-inline: auto;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
+  .site-header .container {
+    width: calc(100% - 0.75rem);
+  }
+
   .hero-actions {
     flex-direction: column;
+    max-width: 100%;
   }
 
   .btn {
     width: 100%;
+  }
+
+  .service-icon {
+    width: 5rem;
+    height: 5rem;
   }
 }
