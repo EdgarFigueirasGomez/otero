@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Otero — Servizo de grúa, mecánica e chapa en Louredo, Maside. Asistencia na estrada e taller profesional."
+    />
+    <title>Otero · Grúa, Mecánica e Chapa · Maside</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Orbitron:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="#" class="logo-link" aria-label="Otero — Inicio">
+          <img src="assets/logo-letra.png" alt="Otero" width="140" height="36" />
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-main"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <nav>
+          <ul class="nav" id="nav-main">
+            <li><a href="#servicios">Servizos</a></li>
+            <li><a href="#nosotros">Nós</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li>
+              <a class="nav-cta" href="tel:+34608141140">Chamar agora</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="hero-badge">Louredo · Maside</p>
+            <h1>
+              Grúa, mecánica e chapa
+              <span>con confianza na estrada</span>
+            </h1>
+            <p class="hero-lead">
+              Asistencia en carretera e taller integral. Atención rápida, profesional e
+              de proximidade no corazón de Ourense.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+34608141140">608 141 140</a>
+              <a class="btn btn-ghost" href="#ubicacion">Como chegar</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img
+              src="assets/otero.png"
+              alt="Otero — Chapa, Grúa, Mecánica"
+              width="420"
+              height="320"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="servicios">
+        <div class="container">
+          <p class="section-label">Servizos</p>
+          <h2 class="section-title">Todo o que precisa o seu vehículo</h2>
+          <p class="section-intro">
+            Un mesmo equipo para sacalo da estrada, deixalo a punto e recuperar a súa
+            carrocería. Servizo local con trato directo.
+          </p>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="40" height="40" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M14 32h12l2-6h6l3 8H14zM18 26l3-8h8l2 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path d="M22 14v4M30 12l-2 6" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <h3>Grúa</h3>
+              <p>
+                Servizo de asistencia en vía e remolque. Disponibilidade para averías,
+                accidentes ou traslados con seguridade.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="40" height="40" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="24" cy="22" r="6" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M24 16V10M24 34v4M18 22h-4M30 22h4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path d="M20 28h8l-1 6h-6l-1-6z" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <h3>Mecánica</h3>
+              <p>
+                Reparación e mantemento no taller: motor, frenos, suspensión e
+                diagnóstico para deixar o coche listo.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="40" height="40" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M12 30h20l3-10H15l-3 10zM18 20l2-6h10l2 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path d="M26 12l2 4M20 14l1 3" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <h3>Chapa</h3>
+              <p>
+                Chapa e pintura para recuperar a carrocería tras golpes ou rozaduras.
+                Acabado coidado e profesional.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-strip" id="nosotros">
+        <div class="container about-inner">
+          <img src="assets/logo-images.png" alt="Otero — iconos de servizo" width="200" height="80" />
+          <p>
+            <strong>Otero</strong> é o seu punto de referencia en Louredo: grúa cando máis
+            precisa, taller de mecánica para o día a día e chapa para deixar o vehículo
+            como novo. Traballo de proximidade, sen complicacións.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="ubicacion">
+        <div class="container">
+          <p class="section-label">Ubicación</p>
+          <h2 class="section-title">Atópenos en Louredo</h2>
+          <p class="section-intro">
+            Estamos en Maside, preto da estrada, para atendelo con rapidez na zona e arredores.
+          </p>
+
+          <div class="location-grid">
+            <div class="location-info">
+              <div class="location-block">
+                <h3>Dirección</h3>
+                <p>Carreira de Louredo, 2<br />32540 Maside, Ourense</p>
+              </div>
+              <div class="location-block">
+                <h3>Teléfonos</h3>
+                <ul class="phone-list">
+                  <li><a href="tel:+34608141140">608 141 140</a></li>
+                  <li><a href="tel:+34659294467">659 294 467</a></li>
+                </ul>
+              </div>
+              <div class="location-block">
+                <h3>Horario</h3>
+                <p>Consulte dispoñibilidade por teléfono.<br />Asistencia en vía segundo necesidade.</p>
+              </div>
+              <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&query=Carreira+de+Louredo+2,+Maside,+Ourense"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir en Google Maps →
+              </a>
+            </div>
+            <div class="map-wrap">
+              <iframe
+                title="Mapa — Otero, Carreira de Louredo 2, Maside"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Carreira+de+Louredo+2,+32540+Maside,+Ourense,+Spain&amp;hl=gl&amp;z=16&amp;output=embed"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Otero · Grúa, Mecánica e Chapa</p>
+        <p class="footer-domains">
+          <span>gruasotero.es</span> · <span>talleresotero.es</span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
