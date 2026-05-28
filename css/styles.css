@@ -95,7 +95,7 @@ a {
 }
 
 .logo-link img {
-  height: 36px;
+  height: 40px;
   width: auto;
 }
 
@@ -338,9 +338,11 @@ a {
 }
 
 .service-icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin-bottom: 1.25rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
   opacity: 0.95;
 }
 

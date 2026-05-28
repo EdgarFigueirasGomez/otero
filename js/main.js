@@ -6,7 +6,7 @@ if (menuToggle && nav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Pechar menú" : "Abrir menú");
+    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
   });
 
   navLinks.forEach((link) => {
